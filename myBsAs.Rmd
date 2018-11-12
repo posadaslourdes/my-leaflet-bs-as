@@ -1,0 +1,34 @@
+---
+title: "map"
+author: "mlpm"
+date: "November 12, 2018"
+output:
+  word_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+
+
+```{r map, echo=true}
+library(leaflet)
+my_map <- leaflet() %>% 
+  addTiles()
+my_map
+
+
+my_map <- my_map %>%
+   addMarkers(lat = c(-34.603738900, -34.608055600, -34.608739200),lng = c(-58.381570400, -58.370277800, -58.373786200),popup = c("Obelisco", "casa rosada", "cabildo"))%>%
+  addTiles() %>%
+   addRectangles(lat1 = -34.603738900, lng1 = -58.370277000, 
+                lat2 = -34.6088, lng2 = -58.3915704000)
+
+
+my_map 
+  
+```
